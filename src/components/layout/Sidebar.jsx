@@ -10,50 +10,62 @@ const Sidebar = ({ isOpen, onClose }) => {
       name: 'Dashboard',
       href: '/dashboard',
       icon: '📊',
-      gradient: 'from-blue-500 to-indigo-600',
+      gradient: 'from-[#4EA8DE] to-[#A78BFA]', // Skywave Gradient
+      bgColor: 'bg-[#4EA8DE]/10',
+      hoverColor: 'hover:bg-[#4EA8DE]/20',
       description: 'Overview & Analytics'
     },
     {
       name: 'Transactions',
       href: '/transactions',
       icon: '💰',
-      gradient: 'from-green-500 to-emerald-600',
+      gradient: 'from-[#2ECC71] to-[#38B2AC]', // Mint to Teal
+      bgColor: 'bg-[#2ECC71]/10',
+      hoverColor: 'hover:bg-[#2ECC71]/20',
       description: 'Income & Expenses'
     },
     {
       name: 'Categories',
       href: '/categories',
       icon: '🏷️',
-      gradient: 'from-purple-500 to-pink-600',
+      gradient: 'from-[#A78BFA] to-[#4EA8DE]', // Lavender to Sky
+      bgColor: 'bg-[#A78BFA]/10',
+      hoverColor: 'hover:bg-[#A78BFA]/20',
       description: 'Organize & Tag'
     },
     {
       name: 'Budgets',
       href: '/budgets',
       icon: '🎯',
-      gradient: 'from-orange-500 to-red-600',
+      gradient: 'from-[#F4A261] to-[#FF6B6B]', // Sunrise Mist
+      bgColor: 'bg-[#F4A261]/10',
+      hoverColor: 'hover:bg-[#F4A261]/20',
       description: 'Goals & Limits'
     },
     {
       name: 'Reports',
       href: '/reports',
       icon: '📈',
-      gradient: 'from-cyan-500 to-blue-600',
+      gradient: 'from-[#38B2AC] to-[#4EA8DE]', // Teal to Sky
+      bgColor: 'bg-[#38B2AC]/10',
+      hoverColor: 'hover:bg-[#38B2AC]/20',
       description: 'Insights & Trends'
     },
     {
       name: 'Settings',
       href: '/settings',
       icon: '⚙️',
-      gradient: 'from-gray-500 to-slate-600',
+      gradient: 'from-[#6B7280] to-[#1F2937]', // Slate Gray gradient
+      bgColor: 'bg-[#6B7280]/10',
+      hoverColor: 'hover:bg-[#6B7280]/20',
       description: 'Preferences'
     },
   ];
 
   const quickActions = [
-    { name: 'Add Income', icon: '⬆️', color: 'text-green-600' },
-    { name: 'Add Expense', icon: '⬇️', color: 'text-red-600' },
-    { name: 'New Budget', icon: '🎯', color: 'text-blue-600' },
+    { name: 'Add Income', icon: '⬆️', color: 'text-[#2ECC71]', bgColor: 'bg-[#2ECC71]/10', hoverBg: 'hover:bg-[#2ECC71]/20' },
+    { name: 'Add Expense', icon: '⬇️', color: 'text-[#FF6B6B]', bgColor: 'bg-[#FF6B6B]/10', hoverBg: 'hover:bg-[#FF6B6B]/20' },
+    { name: 'New Budget', icon: '🎯', color: 'text-[#4EA8DE]', bgColor: 'bg-[#4EA8DE]/10', hoverBg: 'hover:bg-[#4EA8DE]/20' },
   ];
 
   // Close sidebar when clicking outside on mobile
@@ -92,9 +104,10 @@ const Sidebar = ({ isOpen, onClose }) => {
         transform transition-all duration-300 ease-elastic
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         flex flex-col
+        bg-[#F9FAFB] border-r border-[#E5E7EB]
       `}>
         {/* Glassmorphism Background */}
-        <div className="absolute inset-0 glass-card backdrop-blur-xl"></div>
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-xl border-r border-white/20 shadow-xl"></div>
         
         <div className="relative z-10 flex flex-col h-full">
           {/* Header */}

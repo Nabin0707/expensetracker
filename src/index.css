@@ -5,21 +5,45 @@
 /* ========== DOPAMINE DESIGN FOUNDATION ========== */
 
 :root {
-  /* Dopamine Color Palette - Light Mode */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-success: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  --gradient-warning: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-danger: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  /* 🎨 Dopamine-Optimized Glassmorphism Color Palette */
+  --color-snow-mist: #F9FAFB;
+  --color-frosted-white: rgba(255, 255, 255, 0.6);
+  --color-sky-energy: #4EA8DE;
+  --color-tangerine-glow: #F4A261;
+  --color-mint-fresh: #2ECC71;
+  --color-soft-coral: #FF6B6B;
+  --color-teal-pop: #38B2AC;
+  --color-lavender-blue: #A78BFA;
+  --color-charcoal-ink: #1F2937;
+  --color-slate-gray: #6B7280;
+  --color-glass-line: #E5E7EB;
   
-  /* Glassmorphism Effects */
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  /* Dopamine Gradients */
+  --gradient-skywave: linear-gradient(135deg, #4EA8DE, #A78BFA);
+  --gradient-sunrise: linear-gradient(135deg, #F4A261, #FF6B6B);
+  --gradient-mint-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(46, 204, 113, 0.2));
+  --gradient-primary: linear-gradient(135deg, #4EA8DE 0%, #A78BFA 100%);
+  --gradient-secondary: linear-gradient(135deg, #F4A261 0%, #FF6B6B 100%);
+  --gradient-success: linear-gradient(135deg, #2ECC71 0%, #38B2AC 100%);
+  --gradient-warning: linear-gradient(135deg, #F4A261 0%, #fbbf24 100%);
+  --gradient-danger: linear-gradient(135deg, #FF6B6B 0%, #f87171 100%);
+  
+  /* Enhanced Glassmorphism Effects */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-bg-light: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(78, 168, 222, 0.15);
+  --glass-shadow-strong: 0 12px 40px 0 rgba(78, 168, 222, 0.2);
   
   /* Neuomorphism Shadows */
   --shadow-neumorphism: 20px 20px 60px #d1d9e6, -20px -20px 60px #ffffff;
   --shadow-neumorphism-inset: inset 8px 8px 16px #d1d9e6, inset -8px -8px 16px #ffffff;
+  
+  /* Dopamine Glow Effects */
+  --glow-primary: 0 0 20px rgba(78, 168, 222, 0.3);
+  --glow-secondary: 0 0 20px rgba(244, 162, 97, 0.3);
+  --glow-success: 0 0 20px rgba(46, 204, 113, 0.3);
+  --glow-danger: 0 0 20px rgba(255, 107, 107, 0.3);
   
   /* Dopamine Animations */
   --bounce-timing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -28,10 +52,12 @@
 }
 
 .dark {
-  /* Dark Mode Adjustments */
+  /* Dark Mode Glassmorphism Adjustments */
   --glass-bg: rgba(16, 16, 16, 0.4);
+  --glass-bg-light: rgba(16, 16, 16, 0.2);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --glass-shadow-strong: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
   --shadow-neumorphism: 8px 8px 16px #0a0a0a, -8px -8px 16px #1a1a1a;
   --shadow-neumorphism-inset: inset 4px 4px 8px #0a0a0a, inset -4px -4px 8px #1a1a1a;
 }
@@ -45,9 +71,16 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #f093fb 100%);
+  background: var(--color-snow-mist);
+  background-image: 
+    radial-gradient(at 40% 20%, rgba(78, 168, 222, 0.15) 0px, transparent 50%), 
+    radial-gradient(at 80% 0%, rgba(167, 139, 250, 0.15) 0px, transparent 50%), 
+    radial-gradient(at 0% 50%, rgba(244, 162, 97, 0.1) 0px, transparent 50%), 
+    radial-gradient(at 80% 50%, rgba(255, 107, 107, 0.1) 0px, transparent 50%), 
+    radial-gradient(at 0% 100%, rgba(46, 204, 113, 0.1) 0px, transparent 50%), 
+    radial-gradient(at 80% 100%, rgba(56, 178, 172, 0.15) 0px, transparent 50%);
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 20s ease infinite;
   color: #1e293b;
   transition: all 0.3s var(--smooth-timing);
   overflow-x: hidden;
